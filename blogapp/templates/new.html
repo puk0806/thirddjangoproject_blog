@@ -4,7 +4,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">세번째 블로그</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -15,7 +15,7 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'new' %}">글쓰기</a>
+                  <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,17 +39,17 @@
             </div>
           </nav>
 </head>
+
 <body>
     <div class="container">
-        {% for blog in blogs.all %}
-          <br><br>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{blog.title}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
-              <p class="card-text">{{blog.summary}}<a href="{% url 'detail' blog.id %}" class="card-link"> 자세히 보기</a></p>
-            </div>
-          </div>
-        {%endfor%}
+        <form action="{% url 'create' %}">
+            <h4>제목 : </h4>
+            <input type="text" name = "title">
+            <br><br>
+            <h4>본문 : </h4>
+            <textarea cols="40" rows="10" name="body"></textarea>
+            <br><br>
+            <input class = "btn btn-drak" type="submit" value="제출하기">
+        </form>
     </div>
 </body>
