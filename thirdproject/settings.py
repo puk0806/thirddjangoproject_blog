@@ -128,3 +128,8 @@ STATICFILES_DIRS = [
 
 # static 파이들이 어디로 모일 것인지를 쓰는 곳
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 정적 파일들이 어디에 모일지
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
