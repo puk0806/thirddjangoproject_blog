@@ -1,0 +1,1 @@
+web: gunicorn thirddjangoproject.wsgi --log-file -
